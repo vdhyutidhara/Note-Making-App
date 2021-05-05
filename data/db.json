@@ -1,0 +1,28 @@
+{
+  "notes": [
+    {
+      "title": "Write a program",
+      "details": "Fibonacci series",
+      "category": "reminders",
+      "id": 1
+    },
+    {
+      "title": "Work on Material-UI",
+      "details": "Make a project",
+      "category": "work",
+      "id": 2
+    },
+    {
+      "title": "Do exercise",
+      "details": "Don't do exercise in Gym",
+      "category": "todos",
+      "id": 3
+    },
+    {
+      "title": "Save money",
+      "details": "Don't oversave money",
+      "category": "money",
+      "id": 4
+    }
+  ]
+}
