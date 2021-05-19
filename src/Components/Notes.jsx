@@ -22,6 +22,24 @@ export default function Notes() {
     setNotes(newNotes);
   };
 
+  const handleEdit = async (id) => {
+    const newNote = prompt("Edit your Notes");
+
+    const editNote = notes.map((note) => {
+      if (note.id == id) {
+        note.details = newNote;
+      }
+      return note;
+    });
+    setNotes(editNote);
+
+    await fetch("https://material-ui-tut.herokuapp.com/notes/" + id, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ details: newNote }),
+    });
+  };
+
   const breakpoints = {
     default: 3,
     1100: 2,
@@ -37,7 +55,11 @@ export default function Notes() {
       >
         {notes.map((note) => (
           <div item key={note.id}>
-            <NoteCard note={note} handleDelete={handleDelete} />
+            <NoteCard
+              note={note}
+              handleDelete={handleDelete}
+              handleEdit={handleEdit}
+            />
           </div>
         ))}
       </Masonry>

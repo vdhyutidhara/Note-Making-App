@@ -4,6 +4,7 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import { IconButton, makeStyles, Typography } from "@material-ui/core";
 import DeleteOutlinedIcon from "@material-ui/icons/DeleteOutlined";
+import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 import Avatar from "@material-ui/core/Avatar";
 import { blue, pink, yellow } from "@material-ui/core/colors";
 
@@ -24,7 +25,7 @@ const useStyles = makeStyles({
   },
 });
 
-function NoteCard({ note, handleDelete }) {
+function NoteCard({ note, handleDelete, handleEdit }) {
   const classes = useStyles(note);
 
   return (
@@ -49,6 +50,12 @@ function NoteCard({ note, handleDelete }) {
             {note.details}
           </Typography>
         </CardContent>
+        <IconButton
+          style={{ float: "right" }}
+          onClick={() => handleEdit(note.id)}
+        >
+          <EditOutlinedIcon />
+        </IconButton>
       </Card>
     </div>
   );

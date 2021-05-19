@@ -108,7 +108,7 @@ function Layout({ children }) {
           ))}
         </List>
       </Drawer>
-
+      {/* Notes */}
       <div className={classes.page}>
         <div className={classes.toolbar}></div>
         {children}
